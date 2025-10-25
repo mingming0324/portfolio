@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+
+.luckiest-guy-regular {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* font */
+
+/* 노말라이즈 */
+body,
+ul,
+li,
+h1, h2, h3, h4, h5,
+p, span {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ /* 노말라이즈 끝 */
+
+  /* 라이브러리 */
+  .flex {
+    display: flex;
+  }
+  
+  .flex-d {
+    flex-direction: column;
+  }
+  
+  .grid {
+    display: grid;
+  }
+  
+  .con {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1920px;
+  }
+  
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .back-img {
+    background-image: url(./imgs/back-img.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 950px;
+  }
+
+  :root {
+    --bg_color: #4F7CF3;
+    --main_color: #1E4DD8;
+    --sub_color: #FFDA6A;
+    --black: #222;
+    --white: #fff;
+  }
+   /* 라이브러리 끝 */
+
+  /* 커스텀 */
+  html {
+    background-color: var(--bg_color);
+    font-family: 'Pretendard';
+  }
+
+  /* <!-- loding-page --> */
+  /* <!-- loding-page --> */
+
+  /* <!-- main --> */
+.main_wrap {
+  position: relative;
+  height: 100%;
+  justify-content: right;
+  align-items: center;
+  gap: 100px;
+  background-image: url(./imgs/back-img-2.png);
+  background-repeat: no-repeat;
+  background-position: 26px 18px;
+}
+
+.main_title-box {
+  gap: 102px;
+}
+
+.main_title-box .title {
+  position: relative;
+  font-size: 222px;
+  color: var(--white);
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 5px;
+}
+
+.main_title-box .PORT::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 636px;
+  height: 256px;
+  background-image: url(./imgs/Runner.png);
+  background-size: cover;
+}
+
+.right-box {
+  height: 100%;
+}
+
+.right_top-text {
+  position: relative;
+  gap: 12px;
+  margin-top: 58px;
+  margin-right: 70px;
+}
+
+.right_top-text::after {
+  position: absolute;
+  content: "";
+  top: -13px;
+  right: -160px;
+  transform: translate(-50%, -50%);
+  width: 224px;
+  height: 60px;
+  background-image: url(./imgs/Runner-2.png);
+  background-size: cover;
+}
+
+.right_top-text span {
+  color: var(--sub_color);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.back-object {
+  position: absolute;
+  bottom: 280px;
+  right: 290px;
+  transform: rotate(30deg);
+  z-index: -1;
+}
+  /* <!-- main --> */
+
+  /* <!-- Profile --> */
+  /* <!-- Profile --> */
+
+  /* <!-- menu --> */
+  /* <!-- menu --> */
+
+  /* <!-- finish --> */
+  /* <!-- finish --> */
