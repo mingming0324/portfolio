@@ -211,9 +211,327 @@ a {
   /* <!-- main --> */
 
   /* <!-- Profile --> */
+  .Profile_wrap {
+    justify-content: center;
+    height: 100%;
+    gap: 160px;
+    position: relative;
+    align-items: center;
+    margin-right: 74px;
+  }
+
+  .pt-gap {
+    gap: 66px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .Profile-main {
+    gap: 26px;
+  }
+
+  .Profile-img {
+    position: relative;
+  }
+
+  .Profile-img::after {
+    position: absolute;
+    content: "";
+    top: -110px;
+    left: -155px;
+    width: 244px;
+    height: 420px;
+    background-image: url(./imgs/Runner-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  .P_main-text {
+    gap: 48px;
+  }
+
+  .Profile_name {
+    gap: 8px;
+  }
+  .Profile_name .name-box {
+    align-items: end;
+    gap: 4px;
+  }
+  .Profile_name .name-box h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--sub_color);
+  }
+
+  .Profile_name .name-box .name-text {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 21px;
+    color: var(--white);
+  }
+
+  .Profile_name .eg-name {
+    gap: 8px;
+    align-items: end;
+  }
+
+  .Profile_name .eg-name .en {
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .Profile_name .eg-name .Ch {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .Profile_name .birthday {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .p_text-box {
+    gap: 28px;
+  }
+
+  .p_text-box h5 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .contact-box h5 {
+    color: var(--sub_color);
+  }
+
+  .contact-box .contact-text {
+    gap: 12px;
+  }
+
+.Profile-text-box {
+  gap: 118px;
+}
+
+.Profile-text-box .left-text-box {
+  gap: 52px;
+}
+
+  .p_text-item-day, .p_text-item-name {
+    gap: 36px;
+  }
+
+  .License .License-text {
+    gap: 118px;
+  }
+
+  .Used-Tools-text {
+    gap: 12px;
+  }
+
+  .Used-Tools-text .use-text {
+    gap: 18px;
+  }
+
+  .Award {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .Award h5 {
+    color: var(--sub_color);
+  }
+
+  .p_text-item {
+    gap: 154px;
+  }
+
+.day-box {
+    gap: 22px;
+  }
+
+  .Award .Award_text {
+    font-size: 14px;
+  }
+
+  .Award .Award_design {
+    gap: 4px;
+  }
+
+  .Award .Award_design .Award_name {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 33px;
+    color: var(--sub_color);
+  }
+
+  .Award .Award_design .design {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 33px;
+  }
+
+  .school {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 33px;
+  }
+
+  .school .span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .pro-back-img {
+    position: absolute;
+    bottom: -55px;
+    right: -90px;
+    z-index: -1;
+  }
   /* <!-- Profile --> */
 
   /* <!-- menu --> */
+  .menu_wrap {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+
+  .tab-btn-box {
+    position: absolute;
+    top: 85px;
+    right: 336px;
+    gap: 12px;
+  }
+
+  .tab-btn-box img {
+    cursor: pointer;
+  }
+
+  .tab-btn-box::after {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 90px;
+    height: 50px;
+    background-image: url(./imgs/Runner-4.png);
+  }
+.text-menu, .box-menu {
+  display: none;
+}
+.active {
+  display: flex;
+}
+
+  .text-menu_all {
+    gap: 30px;
+  }
+
+  .text-menu_all li {
+    gap: 28px;
+  }
+
+  .text-menu_all li h5 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .text-menu_all .menu-item {
+    gap: 16px;
+  }
+
+  .text-menu_all .menu-item li {
+    width: 1200px;
+
+  }
+
+  .text-menu_all .menu-item li a {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .text-menu_all .menu-item .take-up {
+    gap: 0;
+    align-items: center;
+  }
+
+  .text-menu_all .menu-item .take-up a {
+    
+  }
+
+  .text-menu_all .menu-item .project_box {
+    width: 100%;
+    text-align: right;
+  }
+
+  .text-menu_all .menu-item .project_box .positioning {
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--white);
+    margin-right: 22px;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+
+  .text-menu_all .menu-item .take-up:hover .positioning {
+    opacity: 1;
+  }
+
+  .text-menu_all .menu-item .positioning:hover {
+    text-decoration: underline;
+  }
+
+  .text-menu_all .menu-item .project_box span {
+    width: 100%;
+  }
+
+  .text-menu_all .menu-item li .hover-box {
+    gap: 30px;
+    align-items: end;
+  }
+
+  .text-menu_all .menu-item li .hover-text {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--white);
+  }
+
+  .text-menu_all .menu-item span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    transition: color .3s ease-in-out;
+  }
+
+  .text-line {
+    width: 1200px;
+    height: 1px;
+    background-color: #6E95FE;
+  }
+
+  .text-menu_all .menu-item li:hover span {
+    color: var(--sub_color);
+  }
+
+  .text-menu_all .menu-item li:hover .hover-text {
+    opacity: 1;
+    color: var(--white);
+  }
+
+  .box-item {
+    gap: 68px;
+  }
   /* <!-- menu --> */
 
   /* <!-- finish --> */
