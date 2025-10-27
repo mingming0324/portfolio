@@ -464,10 +464,6 @@ a {
     align-items: center;
   }
 
-  .text-menu_all .menu-item .take-up a {
-    
-  }
-
   .text-menu_all .menu-item .project_box {
     width: 100%;
     text-align: right;
@@ -532,7 +528,63 @@ a {
   .box-item {
     gap: 68px;
   }
+
+.box-img_wrap {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+  .box-menu .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sub_color);
+    font-weight: 700;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+.box-img_wrap:hover .overlay {
+    opacity: 1;
+  }
   /* <!-- menu --> */
 
   /* <!-- finish --> */
+.finish_wrap {
+  height: 100%;
+}
+  .finish-text {
+    font-size: 220px;
+    font-family: "Luckiest Guy", cursive;
+    color: var(--white);
+    gap: 92px;
+    margin-left: 280px;
+    margin-top: 230px;
+  }
+
+  .finish-text .thank {
+    position: relative;
+  }
+
+  .finish-text .you {
+  }
+  .finish-text .thank::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -50px;
+    width: 880PX;
+    height: 285PX;
+    background-image: url(./imgs/Runner-5.png);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
   /* <!-- finish --> */
