@@ -208,6 +208,9 @@ a {
   transform: rotate(30deg);
   z-index: -1;
 }
+
+
+
   /* <!-- main --> */
 
   /* <!-- Profile --> */
@@ -560,6 +563,7 @@ a {
   /* <!-- finish --> */
 .finish_wrap {
   height: 100%;
+  position: relative;
 }
   .finish-text {
     font-size: 220px;
@@ -574,8 +578,6 @@ a {
     position: relative;
   }
 
-  .finish-text .you {
-  }
   .finish-text .thank::after {
     content: "";
     position: absolute;
@@ -588,3 +590,143 @@ a {
     z-index: -1;
   }
   /* <!-- finish --> */
+
+  /* 캐릭터 */
+.assembly-area {
+  position: absolute;
+  bottom: 20px;
+  right: 28px;
+  width: 600px;
+  height: 200px;
+}
+
+.main_wrap .assembly-area::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 576px;
+  height: 90px;
+  background-image: url(./imgs/Runner-6.png);
+}
+
+.Profile_wrap .assembly-area::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 440px;
+  height: 146px;
+  background-image: url(./imgs/Runner-7.png);
+}
+
+.menu_wrap .assembly-area::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 330px;
+  height: 144px;
+  background-image: url(./imgs/Runner-8.png);
+}
+
+.finish_wrap .assembly-area::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 254px;
+  height: 144px;
+  background-image: url(./imgs/Runner-9.png);
+}
+
+.character-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.part {
+  position: absolute;
+  bottom: 56px;
+  right: 60px;
+}
+
+.head {
+  width: 95px;
+}
+
+.body {
+  width: 92px;
+  right: 204px;
+}
+
+.right-arm {
+  width: 50px;
+  right: 348px;
+}
+.left-arm {
+  width: 40px;
+  right: 446px;
+}
+
+.foot {
+  width: 65px;
+  right: 540px;
+}
+
+.headbody {
+  width: 95px;
+}
+
+.headbodyright {
+  width: 142px;
+  right: 15px;
+  z-index: 10;
+}
+
+.nofoot {
+  width: 182px;
+  right: 15px;
+}
+
+.Profile_wrap .assembly-area {
+  right: -46px;
+}
+
+.Profile_wrap .right-arm {
+  right: 216px;
+}
+
+.Profile_wrap .left-arm {
+  right: 312px;
+}
+
+.Profile_wrap .foot {
+  right: 405px;
+}
+
+
+
+.menu_wrap .left-arm {
+  right: 200px;
+}
+
+.menu_wrap .foot {
+  right: 295px;
+}
+
+.finish_wrap .foot {
+  right: 212px;
+}
+
+
+.full {
+  position: absolute;
+  bottom: 56px;
+  right: 14px;
+  width: 180px;          /* 캐릭터 크기에 맞게 조정 */
+  opacity: 0;            /* 초기에는 숨김 */
+  transform: translateY(0);
+  pointer-events: none;
+}
