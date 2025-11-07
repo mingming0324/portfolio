@@ -471,6 +471,7 @@ a {
 }
 .menuback-img-1 {
   left: 0;
+  z-index: -1;
 }
 .menuback-img-2 {
   right: 0;
@@ -634,10 +635,9 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--sub_color);
+    color: var(--white);
     font-weight: 700;
-    /* font-size: 1.5rem;   */
-    font-size: 0;
+    font-size: 1rem;
     opacity: 0;
     border-radius: 1rem;
     pointer-events: none;
