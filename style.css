@@ -103,7 +103,7 @@ a {
   .con {
     margin-left: auto;
     margin-right: auto;
-    width: 1920px;
+    max-width: 1920px;
   }
   
   img {
@@ -114,8 +114,10 @@ a {
   .back-img {
     background-image: url(./imgs/back-img.png);
     background-repeat: no-repeat;
-    background-position: center;
-    height: 950px;
+    background-position: center center;
+    background-size: cover; /* 💡 핵심 */
+    width: 90%;
+    min-height: 90vh; /* 화면 높이에 맞추기 */
   }
 
   :root {
@@ -124,41 +126,96 @@ a {
     --sub_color: #FFDA6A;
     --black: #222;
     --white: #fff;
+    --gray: #EAEAEA
   }
    /* 라이브러리 끝 */
 
   /* 커스텀 */
   html {
-    background-color: var(--bg_color);
     font-family: 'Pretendard';
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    height: 100vh;
+    overflow-y: scroll;            /* 스크롤 가능한 부모 */
+    scroll-snap-type: y mandatory; /* 세로 방향 스냅 */
   }
 
   /* <!-- loding-page --> */
   /* <!-- loding-page --> */
 
   /* <!-- main --> */
-.main_wrap {
+
+.main {
+  background-color: var(--bg_color);
+  height: 100vh;
   position: relative;
-  height: 100%;
+  overflow: hidden;
+  scroll-snap-align: start; 
+}
+
+.main::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 1.875rem);  
+  height: calc(100% - 1.875rem); 
+  border: 6px solid #FFDA6A;
+  border-radius: 26px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.main_wrap {
   justify-content: right;
   align-items: center;
+  height: 100%;
   gap: 100px;
-  background-image: url(./imgs/back-img-2.png);
-  background-repeat: no-repeat;
-  background-position: 26px 18px;
+}
+
+.text-img {
+  position: absolute;
+}
+
+.back_img-character {
+  left: 4rem;
+  bottom: 1rem;
+}
+.back_img-brand {
+  right: 1rem;
+  bottom: 1rem;
+}
+.back_img-logo {
+  top: 1rem;
+  right: 30rem;
+}
+.back_img-uiux {
+  right: 5rem;
+  top: 2rem;
+}
+.back_img-visual {
+  left: 0;
+  bottom: -2.8rem;
 }
 
 .main_title-box {
-  gap: 102px;
+  gap: 8.5rem; /* 136px */
+  position: relative;
 }
 
 .main_title-box .title {
   position: relative;
-  font-size: 222px;
+  font-size: 13.875rem;
   color: var(--white);
   font-family: "Luckiest Guy", cursive;
-  letter-spacing: 5px;
+  letter-spacing: 0.3125rem;
+  z-index: 1;
 }
+
 
 .main_title-box .PORT::after {
   position: absolute;
@@ -166,10 +223,11 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 636px;
-  height: 256px;
+  width: 39.75rem;   /* 636px */
+  height: 16rem;     /* 256px */
   background-image: url(./imgs/Runner.png);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .right-box {
@@ -178,56 +236,58 @@ a {
 
 .right_top-text {
   position: relative;
-  gap: 12px;
-  margin-top: 58px;
-  margin-right: 70px;
+  gap: 0.75rem;
+  margin-top: 3.625rem;  
+  margin-right: 4.375rem; 
 }
 
-.right_top-text::after {
-  position: absolute;
-  content: "";
-  top: -13px;
-  right: -160px;
-  transform: translate(-50%, -50%);
-  width: 224px;
-  height: 60px;
-  background-image: url(./imgs/Runner-2.png);
-  background-size: cover;
+.right_top-text .line {
+  height: 1.7rem;
+}
+
+.right_top-text .line-2 {
+  width: 1.7rem;
+  left: 14rem;
+  top: .5rem;
 }
 
 .right_top-text span {
   color: var(--sub_color);
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
 }
 
 .back-object {
   position: absolute;
-  bottom: 280px;
-  right: 290px;
-  transform: rotate(30deg);
-  z-index: -1;
+  bottom: -2rem; /* 340px */
+  right: -11rem;   /* 200px */
 }
-
-
-
   /* <!-- main --> */
 
   /* <!-- Profile --> */
+  .Profile {
+    height: 100vh;
+    scroll-snap-align: start; 
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
   .Profile_wrap {
     justify-content: center;
-    height: 100%;
     gap: 160px;
+    height: 100%;
     position: relative;
     align-items: center;
-    margin-right: 74px;
+    padding: 194px 240px 68px;
+    box-sizing: border-box;
   }
 
   .pt-gap {
     gap: 66px;
     font-size: 18px;
+    letter-spacing: -1px;
     font-weight: 500;
-    color: var(--white);
+    color: var(--black);
   }
 
   .Profile-main {
@@ -245,7 +305,7 @@ a {
     left: -155px;
     width: 244px;
     height: 420px;
-    background-image: url(./imgs/Runner-3.png);
+    /* background-image: url(./imgs/Runner-3.png); */
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
@@ -263,16 +323,16 @@ a {
     gap: 4px;
   }
   .Profile_name .name-box h1 {
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 700;
-    color: var(--sub_color);
+    color: var(--main_color);
   }
 
   .Profile_name .name-box .name-text {
-    font-size: 14px;
+    font-size: 0.875rem; 
+    line-height: 1.3125rem;
     font-weight: 200;
-    line-height: 21px;
-    color: var(--white);
+    color: var(--black);
   }
 
   .Profile_name .eg-name {
@@ -281,21 +341,21 @@ a {
   }
 
   .Profile_name .eg-name .en {
-    font-size: 40px;
+    font-size: 2.4rem;
     font-weight: 400;
-    color: var(--white);
+    color: var(--black);
   }
 
   .Profile_name .eg-name .Ch {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    color: var(--white);
+    color: var(--black);
   }
 
   .Profile_name .birthday {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 400;
-    color: var(--white);
+    color: var(--black);
   }
 
   .p_text-box {
@@ -303,13 +363,13 @@ a {
   }
 
   .p_text-box h5 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--black);
   }
 
   .contact-box h5 {
-    color: var(--sub_color);
+    color: var(--main_color);
   }
 
   .contact-box .contact-text {
@@ -317,7 +377,7 @@ a {
   }
 
 .Profile-text-box {
-  gap: 118px;
+  gap: 109px;
 }
 
 .Profile-text-box .left-text-box {
@@ -341,13 +401,13 @@ a {
   }
 
   .Award {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
-    color: var(--white);
+    color: var(--black);
   }
 
   .Award h5 {
-    color: var(--sub_color);
+    color: var(--main_color);
   }
 
   .p_text-item {
@@ -359,7 +419,7 @@ a {
   }
 
   .Award .Award_text {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .Award .Award_design {
@@ -367,26 +427,26 @@ a {
   }
 
   .Award .Award_design .Award_name {
-    font-size: 18px;
+    font-size: 1.125rem; 
+    line-height: 2.0625rem; 
     font-weight: 600;
-    line-height: 33px;
-    color: var(--sub_color);
+    color: var(--bg_color);
   }
 
   .Award .Award_design .design {
-    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 2.0625rem; 
     font-weight: 400;
-    line-height: 33px;
   }
 
   .school {
-    font-size: 14px;
+    font-size: 0.875rem; 
+    line-height: 2.0625rem; 
     font-weight: 500;
-    line-height: 33px;
   }
 
   .school .span {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
   }
 
@@ -399,6 +459,12 @@ a {
   /* <!-- Profile --> */
 
   /* <!-- menu --> */
+.menu {
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start; 
+}
+
   .menu_wrap {
     justify-content: center;
     align-items: center;
@@ -408,25 +474,15 @@ a {
 
   .tab-btn-box {
     position: absolute;
-    top: 85px;
-    right: 336px;
-    gap: 12px;
+    top: 5.3125rem;    
+    right: 15rem;     
+    gap: 2rem;        
   }
 
   .tab-btn-box img {
     cursor: pointer;
   }
 
-  .tab-btn-box::after {
-    content: "";
-    position: absolute;
-    top: -70px;
-    right: 50%;
-    transform: translateX(50%);
-    width: 90px;
-    height: 50px;
-    background-image: url(./imgs/Runner-4.png);
-  }
 .text-menu, .box-menu {
   display: none;
 }
@@ -435,25 +491,25 @@ a {
 }
 
   .text-menu_all {
-    gap: 30px;
+    gap: 1.875rem; 
   }
 
   .text-menu_all li {
-    gap: 28px;
+    gap: 1.75rem; 
   }
 
   .text-menu_all li h5 {
-    font-size: 24px;
+    font-size: 1.5rem;  
     font-weight: 700;
     color: var(--black);
   }
 
   .text-menu_all .menu-item {
-    gap: 16px;
+    gap: 1rem;   
   }
 
   .text-menu_all .menu-item li {
-    width: 1200px;
+    width: 90rem; 
 
   }
 
@@ -473,10 +529,10 @@ a {
   }
 
   .text-menu_all .menu-item .project_box .positioning {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 200;
-    color: var(--white);
-    margin-right: 22px;
+    color: var(--black);
+    margin-right: 1.375rem;
     opacity: 0;
     transition: opacity .3s ease-in-out;
   }
@@ -494,49 +550,49 @@ a {
   }
 
   .text-menu_all .menu-item li .hover-box {
-    gap: 30px;
+    gap: 1.875rem;  
     align-items: end;
   }
 
   .text-menu_all .menu-item li .hover-text {
     opacity: 0;
     transition: opacity .3s ease-in-out;
-    font-size: 14px;
+    font-size: 0.875rem; 
     font-weight: 200;
-    color: var(--white);
+    color: var(--black);
   }
 
   .text-menu_all .menu-item span {
-    font-size: 18px;
+    font-size: 1.125rem; 
     font-weight: 600;
-    color: var(--white);
+    color: var(--black);
     transition: color .3s ease-in-out;
   }
 
   .text-line {
-    width: 1200px;
-    height: 1px;
-    background-color: #6E95FE;
+    width: 90rem;     
+    height: 0.0625rem; 
+    background-color: var(--gray);
   }
 
   .text-menu_all .menu-item li:hover span {
-    color: var(--sub_color);
+    color: var(--main_color);
   }
 
   .text-menu_all .menu-item li:hover .hover-text {
     opacity: 1;
-    color: var(--white);
+    color: var(--black);
   }
 
   .box-item {
-    gap: 68px;
+    gap: 4.25rem;
   }
 
 .box-img_wrap {
   position: relative;
-  width: 130px;
-  height: 130px;
-  border-radius: 16px;
+  width: 8.125rem;   
+  height: 8.125rem;  
+  border-radius: 1rem;
   overflow: hidden;
 }
 
@@ -549,7 +605,7 @@ a {
     justify-content: center;
     color: var(--sub_color);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1rem;  
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -561,17 +617,23 @@ a {
   /* <!-- menu --> */
 
   /* <!-- finish --> */
+  .finish {
+    height: 100vh;
+    scroll-snap-align: start; 
+    overflow: hidden;
+  }
+
 .finish_wrap {
   height: 100%;
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
   .finish-text {
-    font-size: 220px;
+    font-size: 13.75rem;
     font-family: "Luckiest Guy", cursive;
-    color: var(--white);
-    gap: 92px;
-    margin-left: 280px;
-    margin-top: 230px;
+    color: var(--black);
+    gap: 15rem; 
   }
 
   .finish-text .thank {
@@ -583,9 +645,24 @@ a {
     position: absolute;
     top: 2px;
     left: -50px;
-    width: 880PX;
-    height: 285PX;
+    width: 55rem;  
+    height: 17.8125rem; 
     background-image: url(./imgs/Runner-5.png);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  .finish-text .you {
+    position: relative;
+  }
+
+  .finish-text .you::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -50px;
+    width: 55rem;  
+    height: 17.8125rem; 
+    background-image: url(./imgs/Runner-6.png);
     background-repeat: no-repeat;
     z-index: -1;
   }
@@ -594,50 +671,10 @@ a {
   /* 캐릭터 */
 .assembly-area {
   position: absolute;
-  bottom: 20px;
-  right: 28px;
-  width: 600px;
-  height: 200px;
-}
-
-.main_wrap .assembly-area::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 576px;
-  height: 90px;
-  background-image: url(./imgs/Runner-6.png);
-}
-
-.Profile_wrap .assembly-area::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 440px;
-  height: 146px;
-  background-image: url(./imgs/Runner-7.png);
-}
-
-.menu_wrap .assembly-area::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 330px;
-  height: 144px;
-  background-image: url(./imgs/Runner-8.png);
-}
-
-.finish_wrap .assembly-area::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 254px;
-  height: 144px;
-  background-image: url(./imgs/Runner-9.png);
+  top: 1.25rem; /* 20px */
+  left: 1.75rem; /* 28px */
+  width: 37.5rem; /* 600px */
+  height: 12.5rem; /* 200px */
 }
 
 .character-box {
@@ -646,49 +683,153 @@ a {
   height: 100%;
 }
 
-.part {
+.part-box {
   position: absolute;
-  bottom: 56px;
-  right: 60px;
+  bottom: 3.5rem; /* 56px */
+  right: 3.75rem; /* 60px */
+}
+
+.line {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.375rem;    /* 6px */
+  height: 4rem;       /* 32px */
+  background-color: var(--gray);
+  border-radius: 1rem;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.line-2 {
+  position: absolute;
+  top: 3rem;
+  left: -7.2rem;
+  width: 6rem;    
+  height: 0.375em;      
+  background-color: var(--gray);
+  border-radius: 1rem;
+}
+
+.main .line,
+.main .line-2  {
+  background-color: var(--sub_color);
+
+}
+.main .line {
+  top: -2.5rem;
+  height: 4rem; 
+}
+.main .line-2 {
+  top: 3rem;
+  left: -5.7rem;
+  width: 5rem; 
+}
+.right_top-text .line {
+  height: 2rem
+}
+
+.right_top-text .line-2 {
+  left: 13.4rem;
+  top: .5rem;
+  width: 2.5rem;
+}
+.tab-btn-box .line {
+  top: -5.5rem;
+}
+.tab-btn-box .tab-text-box .line {
+  left: 2.3rem;
+  
+}
+
+.tab-btn-box .tab-img-box .line {
+  left: 8.7rem;
 }
 
 .head {
-  width: 95px;
+  width: 5.9375rem; /* 95px */
+  left: 5.125rem;   /* 82px */
+  z-index: 2;
+}
+
+.head .line {
+  height: 1.7rem; 
 }
 
 .body {
-  width: 92px;
-  right: 204px;
+  width: 5.75rem; /* 92px */
+  left: 13.375rem;  /* 214px */
+}
+
+.body .line {
+  top: -7.2rem;
 }
 
 .right-arm {
-  width: 50px;
-  right: 348px;
+  width: 3.125rem; /* 50px */
+  left: 21.75rem;   /* 348px */
+  z-index: 0;
 }
-.left-arm {
-  width: 40px;
-  right: 446px;
+.right-arm .line,
+.left-arm .line {
+  top: -6.8rem;
+}
+.foot .line {
+  top: -9.3rem;
 }
 
+
+.main .right-arm .line {
+  top: -5.2rem;
+}
+
+.left-arm {
+  width: 2.5rem; /* 40px */
+  left: 29.125rem;  /* 466px */ 
+  z-index: 2;
+}
+.main .left-arm .line {
+  top: -5.3rem;
+}
+
+
 .foot {
-  width: 65px;
-  right: 540px;
+  width: 4.0625rem; /* 65px */
+  left: 35.125rem;  /* 562px */
+}
+.main .foot .line {
+  top: -8.1rem;
 }
 
 .headbody {
-  width: 95px;
+  width: 5.9375rem;
 }
 
 .headbodyright {
   width: 142px;
-  right: 15px;
-  z-index: 10;
+  left: 5.125rem;   /* 82px */
+  z-index: 0;
+}
+
+.headbodyright .line {
+  height: 2rem; 
+  left: 35%;
 }
 
 .nofoot {
-  width: 182px;
-  right: 15px;
+  width: 190px;
+  left: 2rem;   /* 82px */
 }
+.nofoot .line {
+  height: 2.5rem; 
+  left: 40%;
+}
+
+.nofoot .line-2 {
+  left: -4rem;
+}
+
 
 .Profile_wrap .assembly-area {
   right: -46px;
@@ -723,10 +864,32 @@ a {
 
 .full {
   position: absolute;
-  bottom: 56px;
-  right: 14px;
-  width: 180px;          /* 캐릭터 크기에 맞게 조정 */
-  opacity: 0;            /* 초기에는 숨김 */
-  transform: translateY(0);
+  left: 2rem;
+  width: 190px;       
+  opacity: 0;            
   pointer-events: none;
+}
+.full .line {
+  height: 2.5rem; 
+  left: 40%;
+}
+
+.full .line-2 {
+  left: -4rem;
+}
+
+
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  html { font-size: 15px; }
+}
+@media (max-width: 992px) {
+  html { font-size: 14px; }
+}
+@media (max-width: 768px) {
+  html { font-size: 13px; }
+}
+@media (max-width: 480px) {
+  html { font-size: 12px; }
 }

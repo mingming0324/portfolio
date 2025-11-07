@@ -12,7 +12,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- GSAP-SCROLL -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-
+<!-- MotionPathPlugin -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
 <!-- font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,40 +21,74 @@
 <link rel="stylesheet" href="./style.css">
 <script src="./script.js" defer></script>
 <body>
-  <!-- loding-page -->
+  <div class="container">
+      <!-- loding-page -->
   <section class="loding con"></section>
   <!-- loding-page -->
 
   <!-- main -->
-  <section class="main con back-img">
+  <section class="main con">
     <div class="main_wrap flex">
       <div class="main_title-box flex">
         <span class="PORT title">PORT</span>
         <span class="FOLIO title">FOLIO</span>
+        <div class="text-img back_img-uiux"><img src="./imgs/main-back_uiux.png" alt=""></div>
+        <div class="text-img back_img-visual"><img src="./imgs/main-back_visual.png" alt=""></div>
+        <div class="back-object">
+          <img src="./imgs/back-Object.png" alt="">
+        </div>
       </div>
 
       <div class="right-box flex flex-d">
         <div class="right_top-text flex">
-          <span class="2025">2025</span>
-          <span class="web-design">WEB DESIGN</span>
+          <div class="2025-box">
+            <span class="2025">2025</span>
+            <div class="line"></div>
+          </div>
+
+          <div class="web-design_box">
+            <span class="web-design">WEB DESIGN</span>
+            <div class="line-2"></div>
+          </div>
+
         </div>
 
-        <div class="character-box">
-        </div>
       </div>
 
-      <div class="back-object">
-        <img src="./imgs/back-Object.png" alt="">
-      </div>
+      <div class="text-img back_img-character"><img src="./imgs/main-back_character.png" alt=""></div>
+      <div class="text-img back_img-brand"><img src="./imgs/main-back_brand.png" alt=""></div>
+      <div class="text-img back_img-logo"><img src="./imgs/main-back_logo.png" alt=""></div>
+
+
 
       <!-- 캐릭터  -->
       <div class="assembly-area">
         <div class="character-box">
-          <img src="./imgs/head.png" class="part head">
-          <img src="./imgs/body.png" class="part body">
-          <img src="./imgs/right-arm.png" class="part right-arm">
-          <img src="./imgs/left-arm.png" class="part left-arm">
-          <img src="./imgs/foot.png" class="part foot foot-1">
+          <div class="part-box head">
+            <img src="./imgs/head.png" class="part-img">
+            <div class="line"></div>
+            <div class="line-2"></div>
+          </div>
+      
+          <div class="part-box body">
+            <img src="./imgs/body.png" class="part-img">
+            <div class="line"></div>
+          </div>
+      
+          <div class="part-box right-arm">
+            <img src="./imgs/right-arm.png" class="part-img">
+            <div class="line"></div>
+          </div>
+      
+          <div class="part-box left-arm">
+            <img src="./imgs/left-arm.png" class="part-img">
+            <div class="line"></div>
+          </div>
+      
+          <div class="part-box foot">
+            <img src="./imgs/foot.png" class="part-img">
+            <div class="line"></div>
+          </div>
 
         </div>
       </div>
@@ -62,7 +97,7 @@
   <!-- main -->
 
   <!-- Profile -->
-  <section class="Profile con back-img">
+  <section class="Profile con">
     <div class="Profile_wrap flex">
       <div class="Profile-main flex flex-d">
         <div class="Profile-img">
@@ -113,7 +148,7 @@
               </div>
               <div class="p_text-item-name flex flex-d">
                 <span>대덕대학교 모델과 졸업</span>
-                <span>한국폴리텍 대학 시각디자인과 졸업</span>
+                <span>폴리텍 대학 시각디자인과 졸업</span>
                 <span>육군 병장 만기 전역</span>
                 <span>UIUX웹퍼블리셔 양성과정 수료</span>
               </div>
@@ -228,26 +263,50 @@
       <div class="pro-back-img">
         <img src="./imgs/prifile_img.png" alt="">
       </div>
-            <!-- 캐릭터  -->
-            <div class="assembly-area">
-              <div class="character-box">
-                <img src="./imgs/headbody.png" class="part headbody">
-                <img src="./imgs/right-arm.png" class="part right-arm">
-                <img src="./imgs/left-arm.png" class="part left-arm">
-                <img src="./imgs/foot.png" class="part foot foot-1">
+
+      <!-- 캐릭터  -->
+      <div class="assembly-area">
+        <div class="character-box">
+          <div class="part-box head">
+            <img src="./imgs/headbody.png" class="part-img">
+            <div class="line"></div>
+            <div class="line-2"></div>
+          </div>
       
-              </div>
-            </div>
+          <div class="part-box right-arm">
+            <img src="./imgs/right-arm.png" class="part-img">
+            <div class="line"></div>
+          </div>
+      
+          <div class="part-box left-arm">
+            <img src="./imgs/left-arm.png" class="part-img">
+            <div class="line"></div>
+          </div>
+      
+          <div class="part-box foot">
+            <img src="./imgs/foot.png" class="part-img">
+            <div class="line"></div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
   <!-- Profile -->
 
   <!-- menu -->
-  <section class="menu con back-img">
+  <section class="menu con">
     <div class="menu_wrap flex">
       <div class="tab-btn-box flex">
+        <div class="tab-text-box">
           <img class="tab-text" src="./imgs/tab-textOn.png" alt="">
+          <div class="line"></div>
+        </div>
+        <div class="tab-img-box">
           <img class="tab-img" src="./imgs/tab-imgOff.png" alt="">
+          <div class="line"></div>
+        </div>
+
       </div>
       <div class="text-menu flex  active">
         <ul class="text-menu_all flex flex-d">
@@ -450,9 +509,21 @@
       <!-- 캐릭터  -->
       <div class="assembly-area">
         <div class="character-box">
-          <img src="./imgs/headbodyright.png" class="part headbodyright">
-          <img src="./imgs/left-arm.png" class="part left-arm">
-          <img src="./imgs/foot.png" class="part foot foot-1">
+          <div class="part-box headbodyright">
+            <img src="./imgs/headbodyright.png" class="part-img">
+            <div class="line"></div>
+            <div class="line-2"></div>
+          </div>
+      
+          <div class="part-box left-arm">
+            <img src="./imgs/left-arm.png" class="part-img">
+            <div class="line"></div>
+          </div>
+      
+          <div class="part-box foot">
+            <img src="./imgs/foot.png" class="part-img">
+            <div class="line"></div>
+          </div>
 
         </div>
       </div>
@@ -461,27 +532,38 @@
   <!-- menu -->
 
   <!-- finish -->
-  <section class="finish con back-img">
+  <section class="finish con">
     <div class="finish_wrap flex">
       <div class="finish-text flex">
         <span class="thank">THANK</span>
         <span class="you">YOU</span>
       </div>
 
-<!-- 캐릭터  -->
+      <!-- 캐릭터  -->
       <div class="assembly-area">
         <div class="character-box">
-          <img src="./imgs/nofoot.png" class="part nofoot">
-          <img src="./imgs/foot.png" class="part foot foot-1">
+          <div class="part-box nofoot">
+            <img src="./imgs/nofoot.png" class="part-img">
+            <div class="line"></div>
+            <div class="line-2"></div>
+          </div>
+      
+          <div class="part-box full">
+            <img src="./imgs/full.png" alt="">
+            <div class="line"></div>
+            <div class="line-2"></div>
+          </div>
+          <div class="part-box foot">
+            <img src="./imgs/foot.png" class="part-img">
+            <div class="line"></div>
+          </div>
 
-
-          <img src="./imgs/full.png" class="full full-body">
-          <img src="./imgs/jump.png" class="full full-jump">
-          <img src="./imgs/catch.png" class="full full-catch">
         </div>
       </div>
     </div>
   </section>
   <!-- finish -->
+  </div>
+
 </body>
 </html>
