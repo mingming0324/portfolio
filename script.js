@@ -128,17 +128,61 @@ menuTimeline.to(" .foot", {
   ease: "power2.out"
 }, "-=.4");
 
-// finish
-let assemble_4 = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".finish_wrap",
-    start: "top center",
-    scroller: ".container",
-    onEnter: () => finishTimeline.play(),
-    onLeaveBack: () => finishTimeline.reverse(),
-    // markers: true 
-  }
+// swiper
+var teamSwiper = new Swiper(".teamSwiper", {
+  spaceBetween: 12,
+  slidesPerView: 2.2,
 });
+
+var redesignSwiper = new Swiper(".redesignSwiper", {
+  spaceBetween: 12,
+  slidesPerView: 2.2,
+});
+
+var copySwiper = new Swiper(".copySwiper", {
+  spaceBetween: 12,
+  slidesPerView: 2.2,
+});
+
+
+$(function() {
+  const $previews = $('.web-scroll .preview');
+  const $listItems = $('.box-item li[data-preview]');
+
+  function hideAllPreviews() {
+    $previews.removeClass('active');
+  }
+
+  function showPreview(target) {
+    hideAllPreviews();
+    const $activePreview = $previews.filter(`.${target}`);
+    if ($activePreview.length) {
+      $activePreview.addClass('active');
+      console.log("활성화된 preview:", target);
+    } else {
+      console.warn("preview를 찾을 수 없습니다:", target);
+    }
+  }
+
+  $listItems.on('mouseenter', function() {
+    const target = $(this).data('preview');
+    showPreview(target);
+  });
+
+  // ✅ 초기화 (첫 이미지 표시)
+  showPreview('plantify');
+});
+// finish
+// let assemble_4 = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".finish_wrap",
+//     start: "top center",
+//     scroller: ".container",
+//     onEnter: () => finishTimeline.play(),
+//     onLeaveBack: () => finishTimeline.reverse(),
+//     // markers: true 
+//   }
+// });
 
 let finishTimeline = gsap.timeline({ paused: true });
 
@@ -173,6 +217,69 @@ finishTimeline.to(".full", {
   ease: "power2.out"
 }, "-=.4");
 
+finishTimeline.to(".full .line", {
+  opacity: 0,
+  duration: .4,
+  ease: "power2.out"
+});
+finishTimeline.to(".full .line-2", {
+  opacity: 0,
+  duration: .4,
+  ease: "power2.out"
+});
+
+finishTimeline.to(".catch", {
+  left: 450,
+  bottom: -171,
+  rotate: 30,
+  duration: .4,
+  ease: "power2.out"
+});
+
+finishTimeline.to(".full", {
+  left: 350,
+  bottom: -171,
+  rotate: 30,
+  duration: .4,
+  ease: "power2.out"
+}, "-=.4");
+
+finishTimeline.to(".full", {
+  left: 450,
+  rotate: -20,
+  duration: .4,
+  ease: "power2.out"
+});
+
+finishTimeline.to(".full", {
+  opacity: 0,
+  duration: .4,
+  ease: "power2.out"
+}, "-=.4");
+
+finishTimeline.to(".catch", {
+  opacity: 1,
+  duration: .4,
+  ease: "power2.out"
+}, "-=.6");
+
+finishTimeline.to(".catch", {
+  left: 500,
+  bottom: -150,
+  rotate: -10,
+  duration: .4,
+  ease: "power2.out"
+});
+
+ScrollTrigger.create({
+  trigger: ".finish_wrap",
+  start: "top center",
+  scroller: ".container",
+  onEnter: () => finishTimeline.timeScale(1).play(),
+  onLeaveBack: () => finishTimeline.timeScale(2.5).reverse(),
+  // markers: true
+});
+
   // tab-menu
 $('.tab-btn-box img').on('click', function() {
   
@@ -188,12 +295,12 @@ $('.tab-btn-box img').on('click', function() {
   const textSrc = textEl.attr('src');
 
   // 이미지 파일명 교체 (On/Off 스위치)
-  if (imgSrc.includes('tab-imgOff.png')) {
-    imgEl.attr('src', './imgs/tab-imgOn.png');
-    textEl.attr('src', './imgs/tab-textOff.png');
-  } else {
+  if (imgSrc.includes('tab-imgOn.png')) {
     imgEl.attr('src', './imgs/tab-imgOff.png');
     textEl.attr('src', './imgs/tab-textOn.png');
+  } else {
+    imgEl.attr('src', './imgs/tab-imgOn.png');
+    textEl.attr('src', './imgs/tab-textOff.png');
   }
 });
 
