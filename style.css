@@ -143,6 +143,27 @@ a {
     overflow-y: scroll;            /* 스크롤 가능한 부모 */
     scroll-snap-type: y mandatory; /* 세로 방향 스냅 */
   }
+    
+  /* 스크롤바 커스텀 시작 */
+
+  .container::-webkit-scrollbar {
+    width: 5px;
+    height: 0;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    height: 15%;
+    background: var(--main_color);
+    border-radius: 10px;
+  }
+  
+  .container::-webkit-scrollbar-track {
+    background: var(--gray);
+  }
+  .swiper-horizontal {
+    touch-action: auto;
+  }
+  /* 스크롤바 커스텀 끝 */
 
   /* <!-- loding-page --> */
   /* <!-- loding-page --> */
@@ -678,7 +699,7 @@ a {
   flex-shrink: 0;     
   overflow: hidden;
   border: 0.625rem solid #4F7CF3; /* 10px */
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   background:#fff;
 }
 
@@ -688,8 +709,65 @@ a {
   height: 100%;
   overflow-y: auto;        /* 내부 스크롤 활성화 */
   scrollbar-width: thin;   /* 브라우저 기본 얇은 스크롤 */
+  scrollbar-color: #FFDA6A #EAEAEA;  
   scroll-behavior: smooth; /* 부드럽게 이동 */
 }
+
+.menu-line {
+  position: absolute;
+  background-color: var(--bg_color);
+  border-radius: 50px;
+}
+
+.menu-1 {
+  width: 50px;
+  height: 10px;
+  top: 150px;
+  left: -10px;
+}
+
+.menu-2 {
+  width: 50px;
+  height: 10px;
+  top: 470px;
+  left: -10px;
+}
+
+.menu-3 {
+  width: 10px;
+  height: 50px;
+  left: 120px;
+  top: -10px;
+}
+
+.menu-4 {
+  width: 10px;
+  height: 50px;
+  left: 570px;
+  top: -10px;
+}
+
+.menu-5 {
+  width: 50px;
+  height: 10px;
+  top: 150px;
+  right: -5px;
+}
+
+.menu-6 {
+  width: 50px;
+  height: 10px;
+  top: 650px;
+  right: -5px;
+}
+
+.menu-7 {
+  width: 50px;
+  height: 10px;
+  top: 730px;
+  left: -10px;
+}
+
 
 /* display 토글 */
 .web-scroll .preview{
@@ -697,8 +775,8 @@ a {
   inset: 0;
   display: none;      
   z-index: 0;
-  width: 100%;
-  /* top: 10%; */
+  width: 80%;
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -713,7 +791,7 @@ a {
   height: auto; 
   object-fit: cover;
   display: block;
-  /* border-radius: 1rem; */
+  border-radius: 1rem;
 }
   /* <!-- menu --> */
 
