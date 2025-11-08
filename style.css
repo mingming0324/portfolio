@@ -712,6 +712,7 @@ a {
   scrollbar-width: thin;   /* 브라우저 기본 얇은 스크롤 */
   scrollbar-color: #FFDA6A #EAEAEA;  
   scroll-behavior: smooth; /* 부드럽게 이동 */
+  overflow-y: scroll; 
 }
 
 .menu-line {

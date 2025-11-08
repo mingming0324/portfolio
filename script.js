@@ -164,13 +164,19 @@ $(function() {
     }
   }
 
+  //  마우스를 올리면 해당 preview 보이기
   $listItems.on('mouseenter', function() {
     const target = $(this).data('preview');
     showPreview(target);
   });
 
-  // ✅ 초기화 (첫 이미지 표시)
-  showPreview('plantify');
+  // 마우스를 벗어나면 preview 숨기기
+  $listItems.on('mouseleave', function() {
+    hideAllPreviews();
+  });
+
+  //  초기화 (첫 이미지 표시)
+  // showPreview('plantify');
 });
 // finish
 // let assemble_4 = gsap.timeline({
