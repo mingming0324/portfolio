@@ -196,7 +196,7 @@ a {
   justify-content: right;
   align-items: center;
   height: 100%;
-  gap: 100px;
+  gap: 30px;
 }
 
 .text-img {
@@ -527,6 +527,7 @@ a {
 
   .text-menu_all {
     gap: 1.875rem; 
+    margin-top: 170px;
   }
 
   .text-menu_all li {
