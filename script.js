@@ -170,13 +170,9 @@ $(function() {
     showPreview(target);
   });
 
-  // 마우스를 벗어나면 preview 숨기기
-  $listItems.on('mouseleave', function() {
-    hideAllPreviews();
-  });
 
   //  초기화 (첫 이미지 표시)
-  // showPreview('plantify');
+  showPreview('plantify');
 });
 // finish
 // let assemble_4 = gsap.timeline({
