@@ -671,20 +671,18 @@ a {
     opacity: 1;
   }
 
-  /* ✅ Swiper 내부 구조 강제 가로 정렬 */
 .swiper-wrapper {
   display: flex !important;
   flex-direction: row !important;
   align-items: flex-start;
 }
 
-/* ✅ 슬라이드(li) 가로 정렬 */
 .swiper-slide {
   flex-shrink: 0;
   width: auto;
   margin: 0;
 }
-/* ✅ Swiper가 한 줄로 유지되게 높이 지정 */
+
 .teamSwiper,
 .redesignSwiper,
 .copySwiper {
@@ -785,7 +783,7 @@ a {
 
 .web-scroll .preview.active{
   display: block;     
-  z-index: 10;
+  z-index: 12;
 }
 
 .web-scroll .preview img{
